@@ -1,0 +1,336 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: azure;
+}
+
+.titulo{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: aquamarine;
+    color: rgb(22, 127, 246);
+}
+
+.present{
+    text-align: center;
+    padding: 10px;
+    border-radius:10px;
+    background-color: aqua;
+}
+
+.barra{
+    display: flex;
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.logo{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: aqua;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+.barra ul li{
+    display: inline-block;
+}
+
+.barra ul li a{
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+    background-color: rgb(163, 253, 223);
+}
+
+.barra ul li a:hover{
+    background-color: rgb(64, 160, 160);
+    color: white;
+    cursor: pointer;
+}
+
+.buscar{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buscar input{
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    background-color: aquamarine;
+    border: none;
+}
+
+.buscar button{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: aquamarine;
+    border: none;
+    margin-left: 10px;
+}
+
+.buscar button:hover{
+    background-color: rgb(64, 160, 160);
+    cursor: pointer;
+}
+
+.modelo{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(151, 166, 227);
+}
+
+.modelo h2{
+    background-color: rgb(165, 245, 218);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.modelo div{
+    display: flex;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(165, 245, 205);
+}
+
+.modelo div img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 30%;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.modelo div div{
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(105, 159, 132);
+    width: 70%;
+}
+
+.modelo a{
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(76, 109, 92);
+    color: black;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.modelo a:hover{
+    background-color: rgb(64, 160, 160);
+    color: white;
+    cursor: pointer;
+}
+
+.galeria {
+  max-width: 500px;
+  margin: auto;
+}
+
+#imagenPrincipal {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* Mantiene la proporción sin estirar */
+  border-radius: 8px;
+}
+
+.miniaturas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumb {
+  width: 70px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.thumb:hover {
+  opacity: 0.8;
+}
+
+/* Clase para resaltar la foto que está viendo el usuario */
+.thumb.activa {
+  border-color: #007bff;
+  opacity: 1;
+}
+
+
+.descripcion{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(151, 166, 227);
+}
+
+.descripcion h2{
+    background-color: rgb(165, 245, 218);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descarga{
+    padding:10px;
+    border-radius: 10px;
+    background-color: rgb(165, 245, 205);
+}
+
+/* Contenedor principal */
+.descarga {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    max-width: 320px;
+    padding: 10px;
+}
+
+/* Etiqueta (Label) */
+.descarga label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #4a5568;
+    margin-left: 5px;
+}
+
+/* El Selector (Select) - Diseño Moderno */
+.descarga select {
+    width: 100%;
+    padding: 12px 40px 12px 18px; /* Espacio extra a la derecha para la flecha */
+    font-size: 1rem;
+    color: #2d3748;
+    background-color: #f0fdfa; /* Aqua muy suave */
+    border: 2px solid #64ffda;
+    border-radius: 25px; /* Forma de píldora, nada cuadrado */
+    cursor: pointer;
+    outline: none;
+    
+    /* Eliminar la apariencia fea por defecto */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* Flecha personalizada (SVG) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23007bff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+    
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Interacción del Selector */
+.descarga select:hover {
+    background-color: #ffffff;
+    border-color: #007bff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+}
+
+.descarga select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* El Botón - Diseño con relieve y degradado */
+.descarga button {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 25px; /* Combina con el select */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Interacción del Botón */
+.descarga button:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.descarga button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.3);
+}
+
+.autor{
+    display: flex;
+    justify-content: right;
+}
+
+.autor img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.autor p{
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.creadores{
+    display: flex;
+}
+
+.creadores img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.creadores h4{
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    margin-top: 30px;
+    padding: 11px;
+    border-radius: 10px;
+    background-color: rgb(165, 245, 205);
+    text-align: center;
+}

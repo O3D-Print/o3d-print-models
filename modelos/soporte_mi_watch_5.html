@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte Xiaomi Redmi Watch 5, 5 active y 5 lite.</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="barra"></div>
+    <br>
+    <h1 class="titulo">Soporte Xiaomi Redmi Watch 5, 5 active y 5 lite.</h1>
+    <br>
+    <div class="contenido">
+        <div class="galeria">
+            <div class="visor">
+                <img id="imagenPrincipal" src="../Imagenes/Modelos/soporte_mi_watch_5/Poniendo.GIF" alt="Visor">
+            </div>
+
+            <div class="miniaturas">
+                <img src="../Imagenes/Modelos/soporte_mi_watch_5/Poniendo.GIF" onclick="seleccionar(this)" class="thumb activa">
+                <img src="../Imagenes/Modelos/soporte_mi_watch_5/Con.jpeg" onclick="seleccionar(this)" class="thumb">
+                <img src="../Imagenes/Modelos/soporte_mi_watch_5/Sin.jpeg" onclick="seleccionar(this)" class="thumb">
+            </div>
+        </div>
+        <br>
+        <div class="descripcion">
+            <h2>Descripción del producto:</h2>
+            <h3>Este es un diseño fácil y comodo de imprimir para hacer que tu reloj se cargue de manera más cómoda y funcional.</h3>
+        </div>
+        <div class="descarga">
+            <label for="opciones">Archivos:</label>
+            <select id="opciones" name="lista_desplegable">
+                <!-- AQUÍ PONES LAS RUTAS DE TUS ARCHIVOS STL O ZIP -->
+                <option value="../Archivos/Soporte_Mi_Watch_5/Base.3mf">Base alta</option>
+                <option value="../Archivos/Soporte_Mi_Watch_5/Cabeza.3mf">Cabeza</option>
+                <option value="../Archivos/Soporte_Mi_Watch_5/Base_tumbada.3mf">Base tumbada</option>
+                <option value="../Archivos/Soporte_Mi_Watch_5/Todo.zip">Todo</option>
+            </select>
+            <!-- He cambiado el type="submit" por "button" para que no recargue la página -->
+            <button type="button" onclick="descargarArchivo()">Descargar</button>
+        </div>
+    </div>
+    <br>
+    <a href="../Creadores/o3d-print.html">
+        <div class="autor">
+            <img src="../Imagenes/Usuarios/O3D-Print.PNG" alt="">
+            <p>Hecho por O3D-Print</p>
+        </div></a>
+    <br>
+    <script>
+        // Función para la descarga
+        function descargarArchivo() {
+            const lista = document.getElementById('opciones');
+            const ruta = lista.value;
+            
+            const link = document.createElement('a');
+            link.href = ruta;
+            link.download = ''; // Esto fuerza la descarga
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function seleccionar(elemento) {
+            document.getElementById('imagenPrincipal').src = elemento.src;
+            const todas = document.querySelectorAll('.thumb');
+            todas.forEach(t => t.classList.remove('activa'));
+            elemento.classList.add('activa');
+        }
+
+        const div = document.getElementById("barra");
+        fetch("../barra.html")
+            .then(response => response.text())
+            .then(data => {
+                div.innerHTML = data;
+            })
+            .catch(error => console.error("Error loading barra.html:", error));
+    </script>
+</body>
+</html>

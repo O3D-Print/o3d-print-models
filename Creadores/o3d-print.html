@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O3D-Print</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="barra"></div>
+    <br>
+    <div class="creadores">
+        <h1 class="titulo">O3D-Print</h1>
+        <img src="../Imagenes/Usuarios/O3D-Print.PNG" alt="">
+        <h4>Se unió el 3 de marzo de 2026.</h4>
+    </div>
+    <br>
+    <div class="descripcion">
+        <h2>PROXIMAMENTE</h2>
+    </div>
+
+    <script>
+        const div = document.getElementById("barra");
+        fetch("../barra.html")
+            .then(response => response.text())
+            .then(data => {
+                div.innerHTML = data;
+            })
+            .catch(error => console.error("Error loading barra.html:", error));
+    </script>
+</body>
+</html>

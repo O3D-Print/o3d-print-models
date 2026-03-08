@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="barra"></div>
+    <br>
+    <h1 class="titulo">Modelos</h1>
+    <br>
+    <div class="modelo" id="Soporte Mi Watch 5">
+        <h2>Soporte Xiaomi Redmi Watch 5, 5 active y 5 lite.</h2>
+        <div>
+            <img src="Imagenes/Modelos/Soporte_Mi_Watch_5/Sin.jpeg" alt="">
+            <div>
+                <h3>Tiempo:</h3>
+                <p>1 h y 30 min.</p>
+                <h3>Material:</h3>
+                <p>PLA</p>
+            </div>
+        </div>
+        <a href="modelos/soporte_mi_watch_5.html">Ver</a>
+    </div>
+    <br>
+        <div class="modelo" id="Imán de Nevera Intercambiable">
+        <h2>Imán de nevera intercambiable</h2>
+        <div>
+            <img src="Imagenes/Modelos/iman_nevera_intercambiable/Puesto.jpeg" alt="">
+            <div>
+                <h3>Tiempo:</h3>
+                <p>45 min.</p>
+                <h3>Material:</h3>
+                <p>PLA</p>
+            </div>
+        </div>
+        <a href="modelos/iman_nevera_intercambiable.html">Ver</a>
+    </div>
+    <br>
+    
+    <script>
+        const div = document.getElementById("barra");
+        fetch("barra.html")
+            .then(response => response.text())
+            .then(data => {
+                div.innerHTML = data;
+            })
+            .catch(error => console.error("Error loading barra.html:", error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="barra"></div>
+    <br>
+    <h1 class="titulo">O3D-Print</h1>
+    <br>
+    <div class="present">
+        <h3>Hola y grácias por utilizar nuestra web.</h3>
+        <h3>En esta web encontraras módelos 3D gratuitos para imprimir.</h3>
+        <br>
+        <h3>Si quieren que sus modelos aparezacan en nuestra web, no duden en contactarnos <a href="mailto:o3d.print.o@gmail.com?subject=Hola,%20me%20gustaria%20que%20añadieseís%20mi%20modelo.&body=Nombre:%0ANombre%20del%20modelo:%0ADescripción:%0ANombre%20de%20usuario:%0A%0A%0A(Ponga las imágenes adjuntas al correo y escriba donde quiere que este cada una).">aquí</a>.</h3>
+    </div>
+    <div class="buscar">
+        <input type="text" id="searchInput" placeholder="Busca tus modelos">
+        <button type="submit" id="searchBtn">🔍</button>
+    </div>
+
+    <script>
+    const div = document.getElementById("barra");
+    fetch("barra.html")
+        .then(response => response.text())
+        .then(data => {
+            div.innerHTML = data;
+        })
+        .catch(error => console.error("Error loading barra.html:", error)); 
+
+    // Lógica para el buscador
+    const input = document.getElementById('searchInput');
+    const btn = document.getElementById('searchBtn');
+
+    const realizarBusqueda = () => {
+        const termino = input.value.trim();
+        if (termino) {
+            window.location.href = 'modelos.html#' + termino;
+        }
+    };
+
+    btn.addEventListener('click', realizarBusqueda);
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') realizarBusqueda();
+    });
+    </script>
+</body>
+</html>
