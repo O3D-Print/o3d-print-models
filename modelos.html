@@ -10,8 +10,26 @@
     <div id="barra"></div>
     <br>
     <h1 class="titulo">Modelos</h1>
+    <div class="busqueda"><br><p>Busqueda: <span id="textoBuscado"></span></p></div>
     <br>
-    <div class="modelo" id="Soporte Mi Watch 5">
+        </div></a>
+    <br>
+        <a href="modelos/Imanes_nevera_intercambiables.html">    <div class="modelo" id="imanes intercambiables, O3D-Print" >
+        <h2>Imán de nevera intercambiable</h2>
+        <div>
+            <img src="Imagenes/Modelos/iman_nevera_intercambiable/Puesto.jpeg" alt="">
+            <div>
+                <h3>Tiempo:</h3>
+                <p>47 min.</p>
+                <h3>Material:</h3>
+                <p>PLA</p>
+            </div>
+        </div>
+        <a href="modelos/Imanes_nevera_intercambiables.html" class="ir">Ver</a>
+    </div></a>
+    <br>
+    <a href="https://wa.me?text=Entra%20en%20esta%20web%20te%20encantará.%0Ahttps://o3d-print.github.io/o3d-print" class="Compartir" target="_blank"><img src="../Imagenes/Logo Compartir.png" alt=""></a>
+    <a href="modelos/soporte_mi_watch_5.html">    <div class="modelo" id="Soporte Mi Watch 5, O3D-Print" >
         <h2>Soporte Xiaomi Redmi Watch 5, 5 active y 5 lite.</h2>
         <div>
             <img src="Imagenes/Modelos/Soporte_Mi_Watch_5/Sin.jpeg" alt="">
@@ -22,32 +40,55 @@
                 <p>PLA</p>
             </div>
         </div>
-        <a href="modelos/soporte_mi_watch_5.html">Ver</a>
-    </div>
-    <br>
-        <div class="modelo" id="Imán de Nevera Intercambiable">
-        <h2>Imán de nevera intercambiable</h2>
-        <div>
-            <img src="Imagenes/Modelos/iman_nevera_intercambiable/Puesto.jpeg" alt="">
-            <div>
-                <h3>Tiempo:</h3>
-                <p>45 min.</p>
-                <h3>Material:</h3>
-                <p>PLA</p>
-            </div>
-        </div>
-        <a href="modelos/iman_nevera_intercambiable.html">Ver</a>
-    </div>
-    <br>
+        <a href="modelos/soporte_mi_watch_5.html" class="ir">Ver</a>
     
     <script>
         const div = document.getElementById("barra");
-        fetch("barra.html")
-            .then(response => response.text())
-            .then(data => {
-                div.innerHTML = data;
-            })
-            .catch(error => console.error("Error loading barra.html:", error));
+fetch("barra.html")
+    .then(response => response.text())
+    .then(data => {
+        div.innerHTML = data;
+    })
+    .catch(error => console.error("Error loading barra.html:", error));
+
+// --- LÓGICA DE FILTRADO ---
+function filtrarModelos() {
+    // 1. Obtener el término de la URL (ej: modelos.html#soporte)
+    const hash = decodeURIComponent(window.location.hash.substring(1)).toLowerCase();
+    
+    // 2. Seleccionar todos los contenedores de modelos
+    const modelos = document.querySelectorAll('.modelo');
+    const busqueda = document.querySelectorAll('.busqueda')[0];
+
+    if (hash) {
+        modelos.forEach(modelo => {
+            // Buscamos dentro del ID o del H2 del modelo
+            const nombreModelo = modelo.querySelector('h2').innerText.toLowerCase();
+            const idModelo = modelo.id.toLowerCase();
+
+            if (hash === "todos") {
+                modelo.style.display = "block"; // Mostrar todos si se busca "todos"
+                busqueda.style.display = "none"; // Ocultar el texto de búsqueda
+            } else if (nombreModelo.includes(hash) || idModelo.includes(hash)) {
+                     modelo.style.display = "block"; // Mostrar si coincide
+                 } else {
+                     modelo.style.display = "none";  // Ocultar si no coincide
+                 }
+        });
+    }
+}
+
+// Ejecutar al cargar la página
+window.addEventListener('load', filtrarModelos);
+// Ejecutar si el usuario busca algo estando ya dentro de modelos.html
+window.addEventListener('hashchange', filtrarModelos);
+
+let palabra = window.location.hash.substring(1);
+
+palabra = decodeURIComponent(palabra);
+
+document.getElementById("textoBuscado").innerText = '"' + palabra + '"';
+
     </script>
 </body>
 </html>
